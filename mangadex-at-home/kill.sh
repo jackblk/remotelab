@@ -1,3 +1,7 @@
 #!/bin/bash
 set -e
-docker-compose down -v
+if [ -z "$UID" ]; then
+    UID=$(id -u)
+    export UID
+fi
+GID=${GID} docker-compose down -v

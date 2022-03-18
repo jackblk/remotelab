@@ -8,5 +8,6 @@ fi
 
 if [ -z "$UID" ]; then
     UID=$(id -u)
+    export UID
 fi
 GID=${GID} docker-compose up -d
