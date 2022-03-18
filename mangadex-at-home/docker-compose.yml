@@ -10,13 +10,9 @@ services:
     user: "${COMPOSE_UID}:${COMPOSE_GID}"
     command:
       [
-        "java",
-        "-Dfile-level=off",
-        "-Dstdout-level=info",
-        "-jar /mdah/data/mdah-client.jar ",
-        "--settings /mdah/config/settings.yaml ",
-        "--cache /mdah/cache/ ",
-        "--database /mdah/data"
+        "bash",
+        "-c",
+        "java -Dfile-level=off -Dstdout-level=info -jar /mdah/data/mdah-client.jar --settings /mdah/config/settings.yaml --cache /mdah/cache/ --database /mdah/data"
       ]
     logging:
       driver: "json-file"
@@ -34,7 +30,7 @@ services:
     container_name: prometheus_mdah
     image: prom/prometheus:v2.34.0
     restart: unless-stopped
-    user: "${COMPOSE_UID}:${COMPOSE_GID}"
+    user: "root"
     ports:
       - 9090:9090
     volumes:
@@ -50,7 +46,7 @@ services:
     container_name: grafana_mdah
     image: grafana/grafana:8.4.3
     restart: unless-stopped
-    user: "${COMPOSE_UID}:${COMPOSE_GID}"
+    user: "root"
     ports:
       - 3000:3000
     volumes:
