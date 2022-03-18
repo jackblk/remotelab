@@ -1,0 +1,95 @@
+---
+#  ⢸⣿⣿⣿⣿⠃⠄⢀⣴⡾⠃⠄⠄⠄⠄⠄⠈⠺⠟⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣶⣤⡀⠄
+#  ⢸⣿⣿⣿⡟⢀⣴⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣷
+#  ⢸⣿⣿⠟⣴⣿⡿⡟⡼⢹⣷⢲⡶⣖⣾⣶⢄⠄⠄⠄⠄⠄⢀⣼⣿⢿⣿⣿⣿⣿⣿⣿⣿
+#  ⢸⣿⢫⣾⣿⡟⣾⡸⢠⡿⢳⡿⠍⣼⣿⢏⣿⣷⢄⡀⠄⢠⣾⢻⣿⣸⣿⣿⣿⣿⣿⣿⣿
+#  ⡿⣡⣿⣿⡟⡼⡁⠁⣰⠂⡾⠉⢨⣿⠃⣿⡿⠍⣾⣟⢤⣿⢇⣿⢇⣿⣿⢿⣿⣿⣿⣿⣿
+#  ⣱⣿⣿⡟⡐⣰⣧⡷⣿⣴⣧⣤⣼⣯⢸⡿⠁⣰⠟⢀⣼⠏⣲⠏⢸⣿⡟⣿⣿⣿⣿⣿⣿
+#  ⣿⣿⡟⠁⠄⠟⣁⠄⢡⣿⣿⣿⣿⣿⣿⣦⣼⢟⢀⡼⠃⡹⠃⡀⢸⡿⢸⣿⣿⣿⣿⣿⡟
+#  ⣿⣿⠃⠄⢀⣾⠋⠓⢰⣿⣿⣿⣿⣿⣿⠿⣿⣿⣾⣅⢔⣕⡇⡇⡼⢁⣿⣿⣿⣿⣿⣿⢣
+#  ⣿⡟⠄⠄⣾⣇⠷⣢⣿⣿⣿⣿⣿⣿⣿⣭⣀⡈⠙⢿⣿⣿⡇⡧⢁⣾⣿⣿⣿⣿⣿⢏⣾
+#  ⣿⡇⠄⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢻⠇⠄⠄⢿⣿⡇⢡⣾⣿⣿⣿⣿⣿⣏⣼⣿
+#  ⣿⣷⢰⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⢰⣧⣀⡄⢀⠘⡿⣰⣿⣿⣿⣿⣿⣿⠟⣼⣿⣿
+#  ⢹⣿⢸⣿⣿⠟⠻⢿⣿⣿⣿⣿⣿⣿⣿⣶⣭⣉⣤⣿⢈⣼⣿⣿⣿⣿⣿⣿⠏⣾⣹⣿⣿
+#  ⢸⠇⡜⣿⡟⠄⠄⠄⠈⠙⣿⣿⣿⣿⣿⣿⣿⣿⠟⣱⣻⣿⣿⣿⣿⣿⠟⠁⢳⠃⣿⣿⣿
+#  ⠄⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋⠄⠄⣾⡌⢠⣿⡿⠃
+#  ⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉⠄⠄
+#
+# MangaDex@Home configuration file
+# We are pleased to have you here
+# May fate stay the night with you!
+
+# The size in mebibytes of the cache
+# You can use megabytes instead in a pinch,
+# but just know the two are **NOT** the same.
+max_cache_size_in_mebibytes: 133120
+
+# Optional settings for fancy geoip analytics
+metrics_settings:
+  # whether to enable geoip metrics
+  enable_geoip: true
+  # if geoip metrics are enabled, a license is required
+  # see https://dev.maxmind.com/geoip/geoip2/geolite2/
+  geoip_license_key: mykey
+
+server_settings:
+  # The client secret
+  # Keep this secret at all costs :P
+  secret: mysecret
+  # The port for the webserver to listen on
+  # 443 is recommended for maximum appeal
+  port: 44300
+  # This controls the value the server receives
+  # for your upload speed
+  # Keep this as 0 to use the one currently stored
+  # in the server, or set this higher if needed
+  # This does not affect `max_kilobits_per_second` in any way
+  external_max_kilobits_per_second: 0
+
+  # Stuff that you probably don't need to change
+
+  # The maximum egress rate of the webserver
+  # Setting this to 0 disables the limiter
+  # Setting this too low can have adverse effects
+  # This does not affect `external_max_kilobits_per_second` in any way
+  max_kilobits_per_second: 0
+  # The external port to broadcast to the backend
+  # Keep this at 0 unless you know what you're doing
+  # 0 means broadcast the same value as `port`
+  external_port: 0
+  # How long to wait for the graceful shutdown (Ctrl-C or SIGINT)
+  # This is rounded to a multiple of 5 seconds
+  graceful_shutdown_wait_seconds: 60
+  # The external hostname to listen on
+  # Keep this at 0.0.0.0 unless you know what you're doing
+  hostname: 0.0.0.0
+  # The external ip to broadcast to the webserver
+  # The default of null means the backend will infer it
+  # from where it was sent from, which may fail in the
+  # presence of multiple IPs
+  external_ip: myip
+  # Maximum mebibytes per hour of images to server
+  # Setting this to 0 disables the limiter
+  max_mebibytes_per_hour: 0
+  # Number of threads for Netty worker pool
+  # Don't touch this if you don't have elevated
+  # load levels or are hitting <100 rqps
+  # 0 defaults to (2 * your available processors)
+  # https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Runtime.html#availableProcessors()
+  threads: 0
+  # Whether to enable support for HAProxy Proxy Protocol
+  # If using a reverse proxy to forward requests to MD@H via
+  # ssl passthrough, you can use Proxy Protocol to preserve
+  # original IP if your reverse proxy supports it. This
+  # will allow geo location metrics to work correctly.
+  # https://www.haproxy.com/blog/haproxy/proxy-protocol/
+  enable_proxy_protocol: false
+
+# Settings intended for advanced use cases or tinkering
+dev_settings:
+  # The url to override the MD@H backend with
+  dev_url: ~
+  # Whether to disable the sni check for mangadex.network and localhost
+  disable_sni_check: false
+  # Whether to send the server header or not, defaults to false
+  send_server_header: false

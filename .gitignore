@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+### MD@H
+settings.yaml
+*.jar
+
+### General folders
+**/cache
+**/data
