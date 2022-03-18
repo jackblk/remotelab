@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     # hostname ending with `localhost` to avoid SNI check
     hostname: mdahlocalhost
-    user: "${UID}:${GID}"
+    user: "${COMPOSE_UID}:${COMPOSE_GID}"
     command:
       [
         "java",
@@ -34,7 +34,7 @@ services:
     container_name: prometheus_mdah
     image: prom/prometheus:v2.34.0
     restart: unless-stopped
-    user: "${UID}:${GID}"
+    user: "${COMPOSE_UID}:${COMPOSE_GID}"
     ports:
       - 9090:9090
     volumes:
@@ -50,7 +50,7 @@ services:
     container_name: grafana_mdah
     image: grafana/grafana:8.4.3
     restart: unless-stopped
-    user: "${UID}:${GID}"
+    user: "${COMPOSE_UID}:${COMPOSE_GID}"
     ports:
       - 3000:3000
     volumes:
