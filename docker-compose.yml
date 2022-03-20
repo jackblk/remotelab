@@ -1,0 +1,13 @@
+# nginx proxy mangager to control all ingress
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./nginx-proxy-manager/data/nginx-proxy-manager:/data
+      - ./nginx-proxy-manager/data/letsencrypt:/etc/letsencrypt
