@@ -4,6 +4,7 @@ version: '3'
 services:
   nginx-proxy-manager:
     image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
     restart: unless-stopped
     ports:
       - 80:80
@@ -17,6 +18,7 @@ services:
 
   wg-easy:
     image: weejewel/wg-easy
+    container_name: wg-easy
     restart: unless-stopped
     ports:
       - 51820:51820/udp
