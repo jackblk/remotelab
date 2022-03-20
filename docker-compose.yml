@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
-      - 81:81
+      # - 81:81
       - 443:443
     volumes:
       - ./nginx-proxy-manager/data/nginx-proxy-manager:/data
@@ -36,7 +36,6 @@ services:
     env_file:
       - ./.env
     environment:
-      - WG_HOST=168.138.160.26
       - WG_MTU=1280
       - WG_POST_UP=iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -A INPUT -p udp -m udp --dport 51820 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE; iptables -A FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT; iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
       - WG_POST_DOWN=iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; iptables -D FORWARD -i eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
