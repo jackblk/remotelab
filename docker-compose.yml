@@ -12,6 +12,8 @@ services:
     volumes:
       - ./nginx-proxy-manager/data/nginx-proxy-manager:/data
       - ./nginx-proxy-manager/data/letsencrypt:/etc/letsencrypt
+    networks:
+      - nginxdefault
 
   wg-easy:
     image: weejewel/wg-easy
@@ -21,6 +23,8 @@ services:
       # - 51821:51821/tcp # not needed, will be configured by nginx
     volumes:
       - ./wg-easy/data:/etc/wireguard
+    networks:
+      - nginxdefault
     cap_add:
       - "NET_ADMIN"
       - "SYS_MODULE"
