@@ -5,6 +5,8 @@ services:
     container_name: mdah
     image: "openjdk:19-slim"
     restart: unless-stopped
+    networks:
+      - nginxdefault
     # hostname ending with `localhost` to avoid SNI check
     hostname: mdahlocalhost
     user: "${COMPOSE_UID}:${COMPOSE_GID}"
@@ -30,9 +32,11 @@ services:
     container_name: prometheus_mdah
     image: prom/prometheus:v2.34.0
     restart: unless-stopped
+    networks:
+      - nginxdefault
     user: "root"
-    ports:
-      - 9090:9090
+    # ports:
+    #   - 9090:9090
     volumes:
       - ./prometheus/config/:/etc/prometheus/
       - ./prometheus/data:/prometheus/
@@ -46,9 +50,11 @@ services:
     container_name: grafana_mdah
     image: grafana/grafana:8.4.3
     restart: unless-stopped
+    networks:
+      - nginxdefault
     user: "root"
-    ports:
-      - 3000:3000
+    # ports:
+    #   - 3000:3000
     volumes:
       - ./grafana/config:/etc/grafana/
       - ./grafana/data:/var/lib/grafana/
@@ -59,3 +65,8 @@ services:
       options:
         max-size: "20m"
         max-file: "2"
+
+networks:
+  nginxdefault:
+    external: true
+    name: nginxdefault
