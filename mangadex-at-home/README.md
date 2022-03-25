@@ -9,6 +9,7 @@ MD@H settings
 
 * Copy sample settings: `cp mdah/config/settings.sample.yaml mdah/config/settings.yaml`
 * Edit `my*` secrets: `vi mdah/config/settings.yaml`
+* Make cache folder `mkdir mdah/cache`
 
 
 ### Usage
