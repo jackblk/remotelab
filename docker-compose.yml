@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
-      # - 81:81
+      - 81:81
       - 443:443
     volumes:
       - ./nginx-proxy-manager/data/nginx-proxy-manager:/data
@@ -22,7 +22,8 @@ services:
     restart: unless-stopped
     ports:
       - 51820:51820/udp
-      # - 51821:51821/tcp # not needed, will be configured by nginx
+      # not needed, will be configured by nginx
+      # - 51821:51821/tcp
     volumes:
       - ./wg-easy/data:/etc/wireguard
     networks:
