@@ -20,10 +20,10 @@ services:
     image: weejewel/wg-easy
     container_name: wg-easy
     restart: unless-stopped
-    ports:
-      - 51820:51820/udp
-      # not needed, will be configured by nginx
-      # - 51821:51821/tcp
+    # not needed, will be configured by nginx
+    # ports:
+    #   - 51820:51820/udp
+    #   - 51821:51821/tcp
     volumes:
       - ./wg-easy/data:/etc/wireguard
     networks:
