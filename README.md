@@ -26,3 +26,7 @@ Go to Nginx Proxy Manager and configure ports
 * `sv1-md` to `http://grafana:3000`
 * `sv1-vpn` to `http://wg-easy:51821`
 * `sv1` to `http://nginx-proxy-manager:81`
+
+### 404 page
+
+Use `404page.html`
