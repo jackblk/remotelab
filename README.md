@@ -19,7 +19,6 @@ Go to Nginx Proxy Manager and configure ports
 ### Stream
 
 * `51820` (UDP) to `wg-easy:51820`: for Wireguard
-* `44300` (TCP) to `mdahlocalhost:44300`: for MD@H
 
 ### Host
 

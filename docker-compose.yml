@@ -10,7 +10,7 @@ services:
       - 80:80
       - 81:81
       - 443:443
-      - 44300:44300
+      # - 44300:44300
       - 51820:51820
     volumes:
       - ./nginx-proxy-manager/data/nginx-proxy-manager:/data

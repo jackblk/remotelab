@@ -21,8 +21,8 @@ services:
       options:
         max-size: "20m"
         max-file: "2"
-    # ports:
-    #   - "44300:44300"
+    ports:
+      - "44300:44300"
     volumes:
       - ./mdah/config:/mdah/config
       - ./mdah/data:/mdah/data
