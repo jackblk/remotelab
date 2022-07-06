@@ -6,4 +6,4 @@ if [ ! -f "$SCRIPT_DIR/mdah/data/mdah-client.jar" ]; then
     bash "$SCRIPT_DIR/update_mdah_client.sh"
 fi
 
-COMPOSE_UID=$(id -u) COMPOSE_GID=$(id -g) docker-compose up -d
+COMPOSE_UID=$(id -u) COMPOSE_GID=$(id -g) docker compose up -d
