@@ -22,7 +22,7 @@
 # The size in mebibytes of the cache
 # You can use megabytes instead in a pinch,
 # but just know the two are **NOT** the same.
-max_cache_size_in_mebibytes: 184320
+max_cache_size_in_mebibytes: 143360
 
 # Optional settings for fancy geoip analytics
 metrics_settings:
