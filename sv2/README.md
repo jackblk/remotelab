@@ -10,6 +10,7 @@
 ### Stream
 
 * Wireguard: `51820` (UDP) to `wg-easy:51820`
+* Opentrashmail: `25` (TCP) to `opentrashmail:25`
 
 ### Host
 
