@@ -53,7 +53,7 @@ services:
     volumes:
       - ./opentrashmail/data/:/var/www/opentrashmail/data
     environment:
-      - DISCARD_UNKNOWN=true
+      # - DISCARD_UNKNOWN=true
       - DELETE_OLDER_THAN_DAYS=7
     env_file:
       - ./.env
