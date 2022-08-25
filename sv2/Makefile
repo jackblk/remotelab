@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := run-compose
 
 run-compose:
-	@docker-compose up -d
+	@docker compose up -d
 
 stop-compose:
-	@docker-compose down -v
+	@docker compose down -v
