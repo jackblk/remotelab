@@ -57,12 +57,12 @@ services:
       - DELETE_OLDER_THAN_DAYS=7
     env_file:
       - ./.env
-  censordodge:
-    image: ghcr.io/jackblk/censordodge:master
-    pull_policy: always
-    container_name: censordodge
-    restart: unless-stopped
-    # nginx will control
-    # ports:
-    #   - 80:80
+  # censordodge:
+  #   image: ghcr.io/jackblk/censordodge:master
+  #   pull_policy: always
+  #   container_name: censordodge
+  #   restart: unless-stopped
+  #   # nginx will control
+  #   # ports:
+  #   #   - 80:80
 
