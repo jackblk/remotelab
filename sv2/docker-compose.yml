@@ -58,7 +58,7 @@ services:
     env_file:
       - ./.env
   censordodge:
-    image: ghcr.io/jackblk/censordodge
+    image: ghcr.io/jackblk/censordodge:master
     pull_policy: always
     container_name: censordodge
     restart: unless-stopped
