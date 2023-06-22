@@ -12,7 +12,6 @@ services:
       - 80:80
       - 81:81
       - 443:443
-      - 51820:51820
     volumes:
       - ./nginx-proxy-manager/data/nginx-proxy-manager:/data
       - ./nginx-proxy-manager/data/letsencrypt:/etc/letsencrypt
@@ -22,9 +21,8 @@ services:
     pull_policy: always
     container_name: wg-easy
     restart: unless-stopped
-    # not needed, will be configured by nginx
-    # ports:
-    #   - 51820:51820/udp
+    ports:
+      - 51820:51820/udp
     #   - 51821:51821/tcp
     volumes:
       - ./wg-easy/data:/etc/wireguard
