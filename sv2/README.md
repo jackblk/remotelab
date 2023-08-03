@@ -3,6 +3,7 @@
 ## Config
 
 * Setup `.env` file based on `.env.example`
+* Setup `config.ini` file based on `config.ini.example`
 * `make`
 
 ## Nginx Proxy Manager

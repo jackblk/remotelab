@@ -1,6 +1,6 @@
 # nginx proxy mangager to control all ingress
 # wg-easy for wireguard vpn
-version: '3'
+version: "3"
 services:
   nginx-proxy-manager:
     image: jc21/nginx-proxy-manager:latest
@@ -50,6 +50,7 @@ services:
     #   - 80:80
     volumes:
       - ./opentrashmail/data/:/var/www/opentrashmail/data
+      - ./config.ini:/var/www/opentrashmail/config.ini
     environment:
       # - DISCARD_UNKNOWN=true
       - DELETE_OLDER_THAN_DAYS=7
@@ -63,4 +64,3 @@ services:
   #   # nginx will control
   #   # ports:
   #   #   - 80:80
-
