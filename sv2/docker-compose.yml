@@ -48,8 +48,8 @@ services:
     # ports:
     #   - 25:25
     #   - 80:80
-    volumes:
-      - ./opentrashmail/data/:/var/www/opentrashmail/data
+    # volumes:
+    #   - ./opentrashmail/data/:/var/www/opentrashmail/data
     environment:
       # - DISCARD_UNKNOWN=true
       - DELETE_OLDER_THAN_DAYS=7
