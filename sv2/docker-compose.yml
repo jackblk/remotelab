@@ -50,7 +50,11 @@ services:
     #   - 80:80
     volumes:
       - ./opentrashmail/data/:/var/www/opentrashmail/data
-      - ./config.ini:/var/www/opentrashmail/config.ini
+    environment:
+      # - DISCARD_UNKNOWN=true
+      - DELETE_OLDER_THAN_DAYS=7
+    env_file:
+      - ./.env
   # censordodge:
   #   image: ghcr.io/jackblk/censordodge:master
   #   pull_policy: always
