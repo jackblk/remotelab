@@ -46,6 +46,8 @@ services:
   s-pdf:
     # ports:
     #   - 8080:8080
+    networks:
+      - nginxdefault
     image: frooodle/s-pdf
     pull_policy: always
     container_name: s-pdf
