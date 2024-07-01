@@ -54,7 +54,7 @@ services:
       # - DISCARD_UNKNOWN=true
       - DELETE_OLDER_THAN_DAYS=7
     env_file:
-      - ./.env
+      - ./otm.env
   # censordodge:
   #   image: ghcr.io/jackblk/censordodge:master
   #   pull_policy: always

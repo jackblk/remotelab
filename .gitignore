@@ -135,3 +135,5 @@ settings.yaml
 ### General folders
 **/cache
 **/data
+
+otm.env
